@@ -1,0 +1,34 @@
+<%console.log("views/users/edit.ejs is running...");%>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+</head>
+<body>
+	<header>
+		<h1>Edit <%=user.displayName%>'s Info</h1>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/users">Photographers Page</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h2><%=user.displayName%>'s info:</h2>
+		<form action="/users/<%=user.id%>?_method=PUT" method="POST">
+			<input type="text" name="displayName" placeholder="Display Name">
+			<input type="text" name="username" placeholder="Username">
+			<input type="text" name="password" placeholder="Password">
+			<input type="submit" name="Submit">
+		</form>
+		<form action="/users/<%=user.id%>?_method=DELETE" method="POST">
+		<button>Delete Account</button>
+		</form>
+	</main>
+</body>
+</html>
