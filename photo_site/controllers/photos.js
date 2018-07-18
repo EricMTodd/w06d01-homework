@@ -67,7 +67,7 @@ router.delete("/:id", (req, res) => {
 
 // Edit Route
 router.get("/:id/edit", (req, res) => {
-	Article.findById(req.params.id, (err, foundPhoto) => {
+	Photo.findById(req.params.id, (err, foundPhoto) => {
 		User.find({}, (err, allUsers) => {
 			User.findOne({"photos._id":req.params.id}, (err, foundPhotoUser) => {
 				res.render("photos/edit.ejs", {
@@ -84,7 +84,7 @@ router.put("/:id", (req, res) => {
 	Photo.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedPhoto) => {
 		User.findOne({"photos._id":req.params.id}, (err, foundUser) => {
 			if (foundUser._id.toString() !== req.body.userId) {
-				foundUser.articles.id(req.params.id).remove();
+				foundUser.Photos.id(req.params.id).remove();
 				foundUser.save((err, savedFoundUser) => {
 					User.findById(req.body.userId, (err, newUser) => {
 						newUser.photos.push(updatedPhoto);

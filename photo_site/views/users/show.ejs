@@ -16,6 +16,7 @@
 			<ul>
 				<li><a href="/">Home</a></li>
 				<li><a href="/users">Photographers Page</a></li>
+				<li><a href="/photos/new">Upload a new photo</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -23,7 +24,7 @@
 		<section>Photos by this user</section>
 		<ul>
 			<% for (let i = 0; i < user.photos.length; i++) { %>
-				<li><img src="<%=user.photos[i].url%>"></li>
+				<a href="/photos/<%=user.photos[i].id%>"><img src="<%=user.photos[i].url%>"></a>
 			<% } %>
 		</ul>
 	</main>

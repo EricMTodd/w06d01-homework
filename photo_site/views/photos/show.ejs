@@ -13,7 +13,8 @@
 		<nav>
 			<ul>
 				<li><a href="/">Home</a></li>
-				<li><a href="/photos"></a></li>
+				<li><a href="/users">Photographers</a></li>
+				<li><a href="/photos">Gallery</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -22,7 +23,7 @@
 			<h2>Photos by this user</h2>
 			<ul>
 				<% for (let i = 0; i < user.photos.length; i++) { %>
-					<li><img src="<%=user.photos[i].url%>"/></li>
+					<img src="<%=user.photos[i].url%>"/>
 				<% } %>
 			</ul>
 		</section>
@@ -32,7 +33,7 @@
 		<section>
 			<a href="/photos/<%=photo.id%>/edit">Edit Details</a>
 			<form method="POST" action="/photos/<%=photo.id%>?_method=DELETE">
-				<button>Delte</button>
+				<button>Delete</button>
 			</form>
 		</section>
 	</main>
