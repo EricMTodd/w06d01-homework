@@ -20,7 +20,7 @@
 	</header>
 	<main>
 		<% for (let i = 0; i < photos.length; i++) { %>
-			<li><a href="/photos/<%=photos[i].id%>"><img src="<%=photos[i].url%>"></a></li>
+			<a href="/photos/<%=photos[i].id%>"><img src="<%=photos[i].url%>"></a>
 		<% } %>
 	</main>
 </body>
