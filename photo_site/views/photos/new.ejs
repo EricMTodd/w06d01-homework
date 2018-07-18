@@ -22,7 +22,7 @@
 		<form action="/photos" method="POST">
 			<select name="userId">
 				<% for (let i = 0; i < users.length; i++) { %>
-					<option value="<%=users[i].id%>"><%=users[i].url%></option>
+					<option value="<%=users[i].id%>"><%=users[i].displayName%></option>
 				<% } %>
 			</select>
 			<input type="text" name="url" placeholder="Place url here">

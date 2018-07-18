@@ -20,7 +20,12 @@
 		</nav>
 	</header>
 	<main>
-		<section>Photos Will Go Here</section>
+		<section>Photos by this user</section>
+		<ul>
+			<% for (let i = 0; i < user.photos.length; i++) { %>
+				<li><img src="<%=user.photos[i].url%>"></li>
+			<% } %>
+		</ul>
 	</main>
 </body>
 </html>
