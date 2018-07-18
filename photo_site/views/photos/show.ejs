@@ -9,6 +9,32 @@
 	<title></title>
 </head>
 <body>
-
+	<header>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/photos"></a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<h2>Photos by this user</h2>
+			<ul>
+				<% for (let i = 0; i < user.photos.length; i++) { %>
+					<li><img src="<%=user.photos[i].url%>"/></li>
+				<% } %>
+			</ul>
+		</section>
+		<section>
+			<h1><%=photo.uploadDate%></h1>
+		</section>
+		<section>
+			<a href="/photos/<%=photo.id%>/edit">Edit Details</a>
+			<form method="POST" action="/photos/<%=photo.id%>?_method=DELETE">
+				<button>Delte</button>
+			</form>
+		</section>
+	</main>
 </body>
 </html>

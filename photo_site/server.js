@@ -6,7 +6,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
-const fs = require("fs");
+
 
 // Required database
 require("./db/db");

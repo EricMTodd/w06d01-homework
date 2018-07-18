@@ -20,7 +20,12 @@
 	</header>
 	<main>
 		<form action="/photos" method="POST">
-			<input type="image" name="image" accept="image/*">
+			<select name="userId">
+				<% for (let i = 0; i < users.length; i++) { %>
+					<option value="<%=users[i].id%>"><%=users[i].url%></option>
+				<% } %>
+			</select>
+			<input type="text" name="url" placeholder="Place url here">
 			<input type="submit">
 		</form>
 	</main>

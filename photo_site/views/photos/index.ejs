@@ -20,7 +20,10 @@
 	</header>
 	<main>
 		<% for (let i = 0; i < photos.length; i++) { %>
-			<img src="/photos/<%=photos[i].id%>">
+			<li></li><img src="<%=photos[i].url%>"></li>
+			<form method="POST" action="/photos/<%=photos[i].id%>?_method=DELETE">
+				<button>Delete</button>
+			</form>
 		<% } %>
 	</main>
 </body>
