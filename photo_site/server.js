@@ -6,6 +6,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
+const fs = require("fs");
 
 // Required database
 require("./db/db");
@@ -22,8 +23,8 @@ const usersController = require("./controllers/users.js");
 app.use("/users", usersController);
 
 // Photos controller
-// const photosController = require("./controllers/photos.js");
-// app.use("/photos", photosController);
+const photosController = require("./controllers/photos.js");
+app.use("/photos", photosController);
 
 
 // Home Route

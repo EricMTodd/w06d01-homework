@@ -7,10 +7,9 @@ const mongoose = require("mongoose");
 
 // Photo schema for photo uploads
 const photoSchema = mongoose.Schema({
-	title: String,
 	uploadDate: { type: Date, default: Date.now },
-	array: [],
-	about: String,
+	img: { data: Buffer, type: String },
+	about: String
 });
 
 module.exports = mongoose.model("Photo", photoSchema);

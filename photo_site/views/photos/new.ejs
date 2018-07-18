@@ -9,6 +9,20 @@
 	<title></title>
 </head>
 <body>
-
+	<header>
+		<h1>Photo Upload</h1>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/photos">Gallery</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<form action="/photos" method="POST">
+			<input type="image" name="image" accept="image/*">
+			<input type="submit">
+		</form>
+	</main>
 </body>
 </html>

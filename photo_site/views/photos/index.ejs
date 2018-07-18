@@ -9,6 +9,19 @@
 	<title></title>
 </head>
 <body>
-
+	<header>
+		<h1>Gallery</h1>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/photos/new">Upload a new photo</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<% for (let i = 0; i < photos.length; i++) { %>
+			<img src="/photos/<%=photos[i].id%>">
+		<% } %>
+	</main>
 </body>
 </html>
