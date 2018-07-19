@@ -3,12 +3,12 @@ console.log("auth.js is running...");
 
 const express = require("express");
 const router = express.Router();
-const User = require("../models/users");
+const Account = require("../models/accounts");
 
 
 router.get("/", (req, res) => {
 	res.render("auth/login.ejs", {
-
+		"message": req.session.message
 	});
 });
 
@@ -30,4 +30,4 @@ router.get("/logout", (req, res) => {
 	})
 });
 
-module.eports = router;
+module.exports = router;
