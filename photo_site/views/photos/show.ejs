@@ -22,14 +22,12 @@
 		<section>
 			<h2><a href="/users/<%=user.id%>"><%=user.displayName%>'s</a> photos</h2>
 			<ul>
-				<% for (let i = 0; i < user.photos.length; i++) { %>
-					<img src="<%=user.photos[i].url%>"/><br/>
+					<img src="<%=photo.url%>"/><br/>
 					<h1><%=photo.uploadDate%></h1>
 					<a href="/photos/<%=photo.id%>/edit">Edit Details</a>
 					<form method="POST" action="/photos/<%=photo.id%>?_method=DELETE">
 						<button>Delete</button>
 					</form>
-				<% } %>
 			</ul>
 	</main>
 </body>
