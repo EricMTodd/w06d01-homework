@@ -23,16 +23,13 @@ app.use(session({
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride("_method"));
 app.use(express.static(__dirname + "/public"));
-
-// app.use((req, res, next) => {
-// 	if (req.session.loggedIn === true ) {
-// 		return next();
-// 		} else {
-// 			res.redirect("/auth");
-// 		}
-// });
-
-
+app.use((req, res, next) => {
+	if (req.session.loggedIn === true ) {
+		return next();
+		} else {
+			res.redirect("/auth");
+		}
+});
 
 
 // Required controllers for router
