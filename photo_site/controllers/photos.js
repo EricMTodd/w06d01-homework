@@ -63,11 +63,15 @@ router.get("/:id", async (req, res) => {
 
 // Delete Route
 router.delete("/:id", async (req, res) => {
-	const deletedPhoto = await Photo.findByIdAndRemove(req.params.id);
-	const foundUser = await User.findOne({"photos._id":req.params.id});
-	foundUser.photos.id(req.params.id).remove();
-	foundUser.save();
-	res.redirect("/photos");
+	try {
+		const deletedPhoto = await Photo.findByIdAndRemove(req.params.id);
+		const foundUser = await User.findOne({"photos._id":req.params.id});
+		foundUser.photos.id(req.params.id).remove();
+		foundUser.save();
+		res.redirect("/photos");
+	} catch (err) {
+		res.send(err);
+	}
 });
 
 

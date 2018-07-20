@@ -7,6 +7,7 @@ const Account = require("../models/accounts");
 
 
 router.get("/", (req, res) => {
+	console.log("THis is a log")
 	res.render("auth/login.ejs", {
 		"message": req.session.message
 	});

@@ -23,14 +23,6 @@ app.use(session({
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride("_method"));
 app.use(express.static(__dirname + "/public"));
-app.use((req, res, next) => {
-	if (req.session.loggedIn === true ) {
-		return next();
-		} else {
-			res.redirect("/auth");
-		}
-});
-
 
 // Required controllers for router
 // Users controller
@@ -44,6 +36,13 @@ app.use("/photos", photosController);
 // Accounts controller
 const accountsController = require("./controllers/auth");
 app.use("/auth", accountsController);
+app.use((req, res, next) => {
+	if (req.session.loggedIn === true ) {
+			return next();
+		} else {
+			res.redirect("/auth");	
+		}
+});
 
 
 // Home Route
